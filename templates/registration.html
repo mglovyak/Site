@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <title>Проблема глобального потепления</title>
+</head>
+<body>
+    <header class="header">
+        <img src="../static/images/logo.png" alt="logo" width="150" height="150">
+        
+      </header>
+    <h1>Авторизация</h1>
+    <main class="main-login">
+        {% block content %}
+        {{error}}
+        <form action="{{ url_for('regist') }}" method="post" class="login">
+            <label for="email">
+                <input class="form__input" type="email" name="email" id="email" placeholder="Введите e-mail" required>
+            </label>
+            <label for="password">
+                <input class="form__input" type="password" name="password" id="password" placeholder="Введите пароль" required maxlength="20">
+            </label>
+                <button class="form__button">Создать аккаунт</button>
+        </form>
+        {% endblock %}
+      </main>
+      <p>Если же вспомнил свои данные нажми тогда на эту кнопку</p>
+    <a href="/" class="form__button">Зайти на логин</a>
+</body>
+</html>
